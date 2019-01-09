@@ -17,28 +17,28 @@ class CrispWebsiteConversations
     $result = $this->crisp->_rest->get(
       "website/$websiteId/conversations/$page"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function create($websiteId) {
     $result = $this->crisp->_rest->post(
       "website/$websiteId/conversation"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function getOne($websiteId, $sessionId) {
     $result = $this->crisp->_rest->get(
       "website/$websiteId/conversation/$sessionId"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function deleteOne($websiteId, $sessionId) {
     $result = $this->crisp->_rest->delete(
       "website/$websiteId/conversation/$sessionId"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function initiateOne(
@@ -47,7 +47,7 @@ class CrispWebsiteConversations
     $result = $this->crisp->_rest->post(
       "website/$websiteId/conversation/$sessionId/initiate"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function getMessages(
@@ -56,7 +56,7 @@ class CrispWebsiteConversations
     $result = $this->crisp->_rest->get(
       "website/$websiteId/conversation/$sessionId/messages"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function sendMessage(
@@ -66,7 +66,7 @@ class CrispWebsiteConversations
       "website/$websiteId/conversation/$sessionId/message",
       json_encode($message)
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function acknowledgeMessages(
@@ -76,7 +76,7 @@ class CrispWebsiteConversations
       "website/$websiteId/conversation/$sessionId/read",
       json_encode($read)
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function getMeta(
@@ -85,7 +85,7 @@ class CrispWebsiteConversations
     $result = $this->crisp->_rest->get(
       "website/$websiteId/conversation/$sessionId/meta"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function updateMeta(
@@ -95,7 +95,7 @@ class CrispWebsiteConversations
       "website/$websiteId/conversation/$sessionId/meta",
       json_encode($metas)
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function setState(
@@ -105,7 +105,7 @@ class CrispWebsiteConversations
       "website/$websiteId/conversation/$sessionId/state",
       json_encode(array("state" => $state))
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function setBlock(
@@ -115,7 +115,7 @@ class CrispWebsiteConversations
       "website/$websiteId/conversation/$sessionId/block",
       json_encode($blocked)
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 }
 

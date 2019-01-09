@@ -17,7 +17,7 @@ class CrispWebsiteVisitors
     $result = $this->crisp->_rest->get(
       "website/$websiteId/visitors/list/$page"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 }
 

@@ -15,12 +15,12 @@ class CrispWebsite
 
   public function create($params) {
     $result = $this->crisp->_rest->post("website", json_encode($params));
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function delete($websiteId) {
     $result = $this->crisp->_rest->delete("website/$websiteId");
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 }
 

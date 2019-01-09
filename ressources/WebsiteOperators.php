@@ -15,17 +15,17 @@ class CrispWebsiteOperators
 
   public function getList($websiteId) {
     $result = $this->crisp->_rest->get("website/$websiteId/operators/list");
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function getOne($websiteId, $operatorId) {
     $result = $this->crisp->_rest->get("website/$websiteId/operator/$operatorId");
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function deleteOne($websiteId, $operatorId) {
     $result = $this->crisp->_rest->delete("website/$websiteId/operator/$operatorId");
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function updateOne($websiteId, $operatorId, $params) {
@@ -33,7 +33,7 @@ class CrispWebsiteOperators
       "website/$websiteId/operator/$operatorId",
       $params
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function createOne($websiteId, $operatorId, $params) {
@@ -41,7 +41,7 @@ class CrispWebsiteOperators
       "website/$websiteId/operator/$operatorId",
       $params
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 }
 

@@ -17,7 +17,7 @@ class CrispWebsitePeople
     $result = $this->crisp->_rest->get(
       "website/$websiteId/people/profile/$email"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function findBySegments($websiteId, $segments) {
@@ -30,7 +30,7 @@ class CrispWebsitePeople
     $result = $this->crisp->_rest->get(
       "website/$websiteId/people/profiles?search_filter=".json_encode($searchFilter)
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function createNewPeopleProfile($websiteId, $params) {
@@ -38,7 +38,7 @@ class CrispWebsitePeople
       "website/$websiteId/people/profile",
       json_encode($params)
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function checkPeopleProfileExists($websiteId, $peopleId) {
@@ -52,21 +52,21 @@ class CrispWebsitePeople
     $result = $this->crisp->_rest->get(
       "website/$websiteId/people/profile/$peopleId"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function listPeopleProfiles($websiteId, $page) {
     $result = $this->crisp->_rest->get(
       "website/$websiteId/people/profiles/$page"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function removePeopleProfile($websiteId, $peopleId) {
     $result = $this->crisp->_rest->delete(
       "website/$websiteId/people/profile/$peopleId"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
    public function savePeopleProfile($websiteId, $peopleId, $data) {
@@ -74,7 +74,7 @@ class CrispWebsitePeople
       "website/$websiteId/people/profile/$peopleId",
       json_encode($data)
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function updatePeopleProfile($websiteId, $peopleId, $data) {
@@ -82,21 +82,21 @@ class CrispWebsitePeople
       "website/$websiteId/people/profile/$peopleId",
       json_encode($data)
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function listPeopleSegments($websiteId, $page) {
     $result = $this->crisp->_rest->get(
       "website/$websiteId/people/segments/$page"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function listPeopleConversations($websiteId, $peopleId, $page) {
     $result = $this->crisp->_rest->get(
       "website/$websiteId/people/conversations/$peopleId/list/$page"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function addPeopleEvent($websiteId, $peopleId, $data) {
@@ -104,7 +104,7 @@ class CrispWebsitePeople
       "website/$websiteId/people/events/$peopleId",
       json_encode($data)
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function listPeopleEvent($websiteId, $peopleId, $page) {
@@ -112,14 +112,14 @@ class CrispWebsitePeople
       "GET",
       "website/$websiteId/people/events/$peopleId/list/$page"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function getPeopleData($websiteId, $peopleId) {
     $result = $this->crisp->_rest->get(
       "website/$websiteId/people/data/$peopleId"
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function updatePeopleData($websiteId, $peopleId, $data) {

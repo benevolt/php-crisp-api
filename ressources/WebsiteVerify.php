@@ -15,12 +15,12 @@ class CrispWebsiteVerify
 
   public function getSettings($websiteId) {
     $result = $this->crisp->_rest->get("website/$websiteId/verify/settings");
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function getKey($websiteId) {
     $result = $this->crisp->_rest->get("website/$websiteId/verify/key");
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function updateSettings($websiteId, $params) {
@@ -28,7 +28,7 @@ class CrispWebsiteVerify
       "website/$websiteId/verify/settings",
       $params
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function rollKey($websiteId, $params) {
@@ -36,7 +36,7 @@ class CrispWebsiteVerify
       "website/$websiteId/verify/settings",
       array()
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 }
 

@@ -12,7 +12,7 @@ class CrispUserProfile
   }
   public function get() {
     $result = $this->crisp->_rest->get("user/account/profile");
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
   public function update($params) {
     $result = $this->crisp->_rest->execute("user/account/profile", "PATCH",

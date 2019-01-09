@@ -15,7 +15,7 @@ class CrispWebsiteSettings
 
   public function get($websiteId) {
     $result = $this->crisp->_rest->get("website/$websiteId/settings");
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 
   public function update($websiteId, $params) {
@@ -23,7 +23,7 @@ class CrispWebsiteSettings
       "website/$websiteId/settings",
       $params
     );
-    return $result->decode_response()["data"];
+    return $result->decode_response();
   }
 }
 

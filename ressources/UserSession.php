@@ -20,13 +20,13 @@ class CrispUserSession
         'password' => $password
       ))
     );
-    if (isset($result->decode_response()["data"])) {
-      $this->crisp->auth = $result->decode_response()["data"];
+    if (isset($result->decode_response())) {
+      $this->crisp->auth = $result->decode_response();
       $this->crisp->authenticate(
         $this->crisp->auth["identifier"],
         $this->crisp->auth["key"]
       );
-      return $result->decode_response()["data"];
+      return $result->decode_response();
     }
     else {
       throw new Exception($result->decode_response()["reason"]);
